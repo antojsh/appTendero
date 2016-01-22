@@ -1,0 +1,17 @@
+{
+  "name": "apptendero",
+  "version": "1.0.0",
+  "description": "App para domicilios de tendero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio Sierra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "path": "^0.12.7",
+    "socket.io": "^1.4.4"
+  }
+}

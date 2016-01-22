@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Palanquin);
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+$font-family-principal:'Palanquin', sans-serif;
+$boton-success-color:#7dcd40;
+
+
+$Singups-background-header:saturate(#000,20%);
+$Singups-background:#f6f6f6;
+$Singups-colorIcon:darken(#dadada,20%);
+@import 'mixins.scss';
+@import 'templates/Singups.scss';

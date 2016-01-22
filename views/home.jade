@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript')
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+    link(rel="stylesheet", href="/static/css/bundle.css")
+    link(rel="stylesheet", href="https://file.myfontastic.com/BUNUK4iyyhi4VSPcCozeCS/icons.css")
+  body
+    header
+      .backButtom
+        span.icon-chevron-left
+      .titleHeader
+        strong REGISTER
+      .nextWindow
+        small Next
+    div#container
+      div.formSingups
+        div.rowForm
+          span.icon-user-account
+          input(type='text' placeholder='Nombre Negocio')
+        div.rowForm
+          span.icon-home
+          input(type='text' placeholder='Nombre usuario')
+        div.rowForm
+          span.icon-envelope
+          input(type='email' placeholder='Correo')
+        div.rowForm
+          div.selectPhoto
+            span.icon-camera
+          small Add photos (Optional)
+        div.rowForm
+         .photosSelected
+              .photo
+              .photo
+              .photo
+        div.rowForm
+          button.button.success REGISTER
+        
+      
