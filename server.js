@@ -16,7 +16,6 @@ io.on('connection', function (socket) {
 
 
 
-//routes
 
 login= function (req, res) {
   res.render(__dirname + '/views/home');
