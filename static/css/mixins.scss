@@ -35,3 +35,25 @@
     -moz-appearance: none;
     appearance: none;
 }
+@mixin placeHolderColor($color,$opacity){
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    $color;
+        opacity:  $opacity;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color:    $color;
+       opacity:  $opacity;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color:    $color;
+       opacity:  $opacity;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color:    $color;
+       opacity:  $opacity;
+    }
+    &:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+      color:    $color;
+      opacity:  $opacity;
+    }
+}

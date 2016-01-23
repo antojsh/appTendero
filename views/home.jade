@@ -7,34 +7,59 @@ html(lang="en")
     link(rel="stylesheet", href="/static/css/bundle.css")
     link(rel="stylesheet", href="https://file.myfontastic.com/BUNUK4iyyhi4VSPcCozeCS/icons.css")
   body
-    header
-      .backButtom
-        span.icon-chevron-left
-      .titleHeader
-        strong REGISTER
-      .nextWindow
-        small Next
-    div#container
-      div.formSingups
+    section#login
+      .contentLogin
+        h1.logoText AppTendero
+        div.rowForm
+          input(type='text' placeholder='Usuario o email')
+        div.rowForm
+          input(type='text' placeholder='Contraseña')
+        div.rowForm
+          input(type='submit' placeholder='Contraseña' value='Log in')
+        div.rowForm
+          small Ha olvidado su contraseña ?
+      .registerContent
+        a(href="#container") No tienes cuenta, Registrate aqui !
+
+    section#container
+      header
+        .backButtom
+          span.icon-chevron-left
+        .titleHeader
+          strong REGISTER
+        .nextWindow
+          small Next
+      article.formSingups
         div.rowForm
           span.icon-user-account
-          input(type='text' placeholder='Nombre Negocio')
+          input(type='text' placeholder='Nombre Negocio')#nameNegocio
         div.rowForm
           span.icon-home
-          input(type='text' placeholder='Nombre usuario')
+          input(type='text' placeholder='Nombre usuario')#userName
         div.rowForm
           span.icon-envelope
-          input(type='email' placeholder='Correo')
+          input(type='email' placeholder='Correo')#email
         div.rowForm
-          div.selectPhoto
-            span.icon-camera
-          small Add photos (Optional)
+          span.icon-lock
+          input(type='password' placeholder='Contraseña')#password
         div.rowForm
-         .photosSelected
-              .photo
-              .photo
-              .photo
+          span.icon-lock
+          input(type='password' placeholder='Validar contraseña')#validePassword
         div.rowForm
-          button.button.success REGISTER
-        
+          span.icon-search-plus
+          input(type='text' placeholder='Categoria')#validePassword
+        //- div.rowForm
+        //-   div.selectPhoto
+        //-     span.icon-camera
+          //- small Add photos (Optional)
+        //- div.rowForm
+        //-  .photosSelected
+        //-       .photo
+        //-       .photo
+        //-       .photo
+        div.rowForm
+          a(href='#home').button.success REGISTER
+    section  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia minus obcaecati, commodi officiis eius itaque natus expedita laboriosam? Laborum dolore quia, quam deserunt eos, odio consequuntur sunt excepturi sint ad.
+  script(src="http://code.jquery.com/jquery-1.12.0.min.js")
+  script(src='/static/js/register.js')    
       

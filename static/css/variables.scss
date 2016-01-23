@@ -1,16 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Palanquin);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+$font-family-principal:'Palanquin', sans-serif;
+$font-family-logo:'Kaushan Script', cursive;
+$boton-success-color:#F24C27;
+
+$Singups-color-text-header:rgba(255,255,255,.8);
+$Singups-background-header:darken(#024959,0%);
+$Singups-background:#f6f6f6;
+$Singups-colorIcon:darken(#5F5448,2%);
+
 *{
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
+	font-family:$font-family-principal;
 }
 
-$font-family-principal:'Palanquin', sans-serif;
-$boton-success-color:#7dcd40;
-
-
-$Singups-background-header:saturate(#000,20%);
-$Singups-background:#f6f6f6;
-$Singups-colorIcon:darken(#dadada,20%);
 @import 'mixins.scss';
-@import 'templates/Singups.scss';
+@import 'utils.scss';
+@import 'templates/app.scss';

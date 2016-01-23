@@ -1,8 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Palanquin);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Palanquin", sans-serif; }
+
+section:target {
+  z-index: 20; }
+
+.errorColorInput {
+  box-shadow: 1px 1px 5px rgba(255, 0, 0, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.9); }
 
 header {
   position: fixed;
@@ -11,46 +20,49 @@ header {
   width: 100%;
   height: 50px;
   z-index: 20;
-  background: black;
+  background: #024959;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 1em;
   font-family: "Palanquin", sans-serif; }
   header span, header strong, header small {
-    color: #a7a7a7; }
+    color: rgba(255, 255, 255, 0.8); }
   header strong {
     letter-spacing: 7px; }
   header small {
     font-size: 1rem; }
 
-#container {
+section {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100vh;
-  padding-top: 50px;
+  z-index: 0;
   background: #f6f6f6;
   overflow: auto; }
-  #container .formSingups {
+
+section#container {
+  padding-top: 50px; }
+  section#container article.formSingups {
     width: 90%;
     margin: 0 auto;
     padding: 2em 1em;
     display: flex;
     flex-direction: column; }
-    #container .formSingups .rowForm {
+    section#container article.formSingups .rowForm {
       display: flex;
       align-items: center;
       padding: 5px 0px;
       position: relative; }
-      #container .formSingups .rowForm > span {
+      section#container article.formSingups .rowForm > span {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         margin-left: 7px;
-        color: #a7a7a7; }
-      #container .formSingups .rowForm input {
+        color: #594f44; }
+      section#container article.formSingups .rowForm input {
         border: none;
         outline: none;
         display: block;
@@ -58,8 +70,8 @@ header {
         height: 3em;
         padding-left: 40px;
         font-family: "Palanquin", sans-serif; }
-      #container .formSingups .rowForm button {
-        background-color: #7dcd40;
+      section#container article.formSingups .rowForm a {
+        background-color: #F24C27;
         border: none;
         -webkit-border-radius: .4em;
         border-radius: .4em;
@@ -85,8 +97,8 @@ header {
         -ms-transition: .2s;
         transition: .2s;
         vertical-align: middle;
-        -webkit-box-shadow: inset 0 -0.2em #4d8423;
-        box-shadow: inset 0 -0.2em #4d8423;
+        -webkit-box-shadow: inset 0 -0.2em #a9270a;
+        box-shadow: inset 0 -0.2em #a9270a;
         white-space: nowrap;
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -98,10 +110,10 @@ header {
         flex: 1;
         width: 50%;
         letter-spacing: 3px; }
-  #container .selectPhoto {
+  section#container .selectPhoto {
     width: 4em;
     height: 4em;
-    border: 1px solid #8e8e8e;
+    border: 1px solid #3c352e;
     position: relative;
     left: 50%;
     top: 1em;
@@ -111,20 +123,97 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
-    #container .selectPhoto span {
+    section#container .selectPhoto span {
       font-size: 2.5em;
-      color: #a7a7a7; }
-  #container .photosSelected {
+      color: #594f44; }
+  section#container .photosSelected {
     width: 100%;
     height: auto;
     padding: 1em;
     display: flex;
     justify-content: space-between; }
-    #container .photosSelected .photo {
+    section#container .photosSelected .photo {
       width: 30%;
       height: 100px;
-      border: 1px solid #747474;
+      border: 1px solid #1f1c18;
       background-size: cover;
       background-image: url(http://www.unipymes.com/wp-content/uploads/2014/09/8.-drogueria.jpg); }
+
+section#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#024959, #037E8C); }
+  section#login .contentLogin {
+    height: auto;
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    section#login .contentLogin h1.logoText {
+      font-family: "Kaushan Script", cursive;
+      color: #FFFBFF;
+      margin-top: -1em;
+      margin-bottom: .8em;
+      font-size: 2.8rem; }
+    section#login .contentLogin .rowForm {
+      width: 100%;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.3);
+      margin-bottom: 10px; }
+      section#login .contentLogin .rowForm:nth-child(4) {
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.3); }
+      section#login .contentLogin .rowForm:nth-child(5) {
+        background: none;
+        text-align: center;
+        color: #FFFFFA;
+        letter-spacing: .1px;
+        font-size: .9rem; }
+      section#login .contentLogin .rowForm input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        color: #fffffa;
+        padding-left: 20px;
+        font-size: 1.1rem; }
+        section#login .contentLogin .rowForm input::-webkit-input-placeholder {
+          /* WebKit, Blink, Edge */
+          color: #FFFFFA;
+          opacity: 0.5; }
+        section#login .contentLogin .rowForm input:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: #FFFFFA;
+          opacity: 0.5; }
+        section#login .contentLogin .rowForm input::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: #FFFFFA;
+          opacity: 0.5; }
+        section#login .contentLogin .rowForm input:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: #FFFFFA;
+          opacity: 0.5; }
+        section#login .contentLogin .rowForm input:placeholder-shown {
+          /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+          color: #FFFFFA;
+          opacity: 0.5; }
+  section#login .registerContent {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 55px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    section#login .registerContent a {
+      color: #fffffa;
+      text-decoration: none;
+      font-size: .7rem; }
 
 /*# sourceMappingURL=bundle.css.map */
