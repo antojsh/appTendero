@@ -6,29 +6,33 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
     link(rel="stylesheet", href="/static/css/bundle.css")
     link(rel="stylesheet", href="https://file.myfontastic.com/BUNUK4iyyhi4VSPcCozeCS/icons.css")
-  body
+  body#registerandlogin
     section#login
       .contentLogin
-        h1.logoText AppTendero
-        div.rowForm
-          input(type='text' placeholder='Usuario o email')
-        div.rowForm
-          input(type='text' placeholder='Contraseña')
-        div.rowForm
-          input(type='submit' placeholder='Contraseña' value='Log in')
-        div.rowForm
-          small Ha olvidado su contraseña ?
+        form
+            h1.logoText Tendero
+            div.rowForm
+             
+              input(type='text' placeholder='Usuario o email')
+            div.rowForm
+              input(type='text' placeholder='Contraseña')
+            div.rowForm
+              input(type='submit' placeholder='Contraseña' value='Log in')
+            div.rowForm
+              small Ha olvidado su contraseña ?
       .registerContent
         a(href="#container") No tienes cuenta, Registrate aqui !
-
+    section#photoReg  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa minima doloribus maxime eligendi quos qui alias quasi deleniti est similique, repellendus, doloremque mollitia rem architecto inventore sit quae dicta.
     section#container
       header
         .backButtom
-          span.icon-chevron-left
+          a(href="#login")
+            span.icon-chevron-left
         .titleHeader
           strong REGISTER
         .nextWindow
-          small Next
+          a(href="#photoReg")
+            small Next
       article.formSingups
         div.rowForm
           span.icon-user-account
@@ -46,8 +50,14 @@ html(lang="en")
           span.icon-lock
           input(type='password' placeholder='Validar contraseña')#validePassword
         div.rowForm
-          span.icon-search-plus
-          input(type='text' placeholder='Categoria')#validePassword
+          span.icon-list-alt
+          textarea(type='text' placeholder='Descripcion del negocio')
+        //- div.rowForm#contentGoCategory 
+        //-   a(href="#category")
+        //-     span.icon-tags 
+        //-       label Categorias
+          
+        //-   .goCategory
         //- div.rowForm
         //-   div.selectPhoto
         //-     span.icon-camera
@@ -57,9 +67,36 @@ html(lang="en")
         //-       .photo
         //-       .photo
         //-       .photo
-        div.rowForm
-          a(href='#home').button.success REGISTER
-    section  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia minus obcaecati, commodi officiis eius itaque natus expedita laboriosam? Laborum dolore quia, quam deserunt eos, odio consequuntur sunt excepturi sint ad.
+        //- div.rowForm
+        //-   a(href='#home').button.success#btnRegister REGISTER
+
+    
+    section.category#category
+        .headerCategory
+          label Categorias
+          span.icon-times#closedCategory
+        .contentCategory
+            ul
+              li.icon-pizza 
+                label Pizza
+              li.icon-eat-food-hotdog-streamline 
+                label Comidas Rapidas
+              li.icon-ios-nutrition 
+                label Tienda
+              li.icon-paw 
+                label Veterinario
+              li.icon-torso-female 
+                label Estilsta
+              li.icon-tools 
+                label Mecanico
+              li.icon-user-md 
+                label Medico
+              li.icon-camera-1 
+                label Fotografo
+
+    
+
+
   script(src="http://code.jquery.com/jquery-1.12.0.min.js")
   script(src='/static/js/register.js')    
       

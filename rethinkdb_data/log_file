@@ -47,3 +47,16 @@
 2016-01-23T09:45:56.303513393 0.479646s notice: Server ready, "si00067_oxe" 8168fcad-5483-431a-86ae-bfbd0828ea64
 2016-01-23T09:45:57.864862750 2.040996s info: Table 67a22618-a859-413e-a7d8-7a6213a87e5a: Starting a new Raft election for term 2.
 2016-01-23T09:45:57.899923029 2.076056s info: Table 67a22618-a859-413e-a7d8-7a6213a87e5a: This server is Raft leader for term 2. Latest log index is 3.
+2016-01-24T10:30:43.610272981 0.105024s notice: Recursively removing directory /home/antonio/appTendero/rethinkdb_data/tmp
+2016-01-24T10:30:43.645953495 0.140716s notice: Running rethinkdb 2.2.3+1~0trusty (GCC 4.8.2)...
+2016-01-24T10:30:43.659487145 0.154244s notice: Running on Linux 3.19.0-33-generic x86_64
+2016-01-24T10:30:43.659847969 0.154596s notice: Loading data from directory /home/antonio/appTendero/rethinkdb_data
+2016-01-24T10:30:43.743035772 0.237788s info: Automatically using cache size of 643 MB
+2016-01-24T10:30:43.744925388 0.239673s notice: Listening for intracluster connections on port 29015
+2016-01-24T10:30:43.810074403 0.304823s notice: Listening for client driver connections on port 28015
+2016-01-24T10:30:43.811120674 0.305868s notice: Listening for administrative HTTP connections on port 8080
+2016-01-24T10:30:43.811124423 0.305871s notice: Listening on addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-01-24T10:30:43.811126867 0.305874s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-01-24T10:30:43.811160765 0.305908s notice: Server ready, "si00067_oxe" 8168fcad-5483-431a-86ae-bfbd0828ea64
+2016-01-24T10:30:45.395808944 1.890557s info: Table 67a22618-a859-413e-a7d8-7a6213a87e5a: Starting a new Raft election for term 3.
+2016-01-24T10:30:45.414953674 1.909702s info: Table 67a22618-a859-413e-a7d8-7a6213a87e5a: This server is Raft leader for term 3. Latest log index is 6.

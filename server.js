@@ -43,6 +43,9 @@ io.on('connection', function (socket) {
 login= function (req, res) {
 	res.render(__dirname + '/views/home');
 }
+timeline= function  (req,res) {
+	res.render(__dirname + '/views/timeline');
+}
 register = function(req,res){
 	var establecimiento={
 		name:req.body.name,
@@ -56,6 +59,7 @@ register = function(req,res){
 	})
 }
 app.get('/',login)
+app.get('/timeline',timeline)
 app.post('/register',register)
 
 
