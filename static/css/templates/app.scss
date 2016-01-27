@@ -151,7 +151,7 @@ section#container{
 
 	
 }
-.category{
+#category{
 		position:fixed;
 		
 		left: 0;
@@ -160,7 +160,7 @@ section#container{
 		height: 100%;
 		background:#FFFFFA;
 		box-shadow:1px 1px 5px #5F5448;
-		display: none;
+		
 		.headerCategory{
 			height: 50px;
 			width: 100%;
@@ -218,6 +218,7 @@ section#login{
 	justify-content:center;
 	align-items:center;
 	background:linear-gradient(#024959,#037E8C);
+	z-index:10;
 	.contentLogin{
 		height:auto;
 		width:90%;
