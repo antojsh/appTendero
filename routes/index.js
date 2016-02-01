@@ -12,12 +12,12 @@ timeline= function  (req,res) {
 	res.render(__dirname + '/../views/timeline');
 }
 authLogin= function(req,res){
-	User.findOne({email: req.body.email.toLowerCase()}, function(err, user) {
+	console.log(req.body.user+'  '+req.body.password)
+	User.findOne({user: req.body.user,password:req.body.password}, function(err, user) {
 	        if(err) return res.send(res.response(403,null,constants.messages.ERROR_LOGIN));
-	        if(user.length>0) return res.send(res.response(200,null,constants.messages.NO_LOGIN));
-	        return res
-	            .status(200)
-	            .send({token: service.createToken(user)});
+	        if(!user) return res.send(res.response(200,null,constants.messages.NO_LOGIN));
+	        return res.send(res.response(200,{token: service.createToken(user)}));
+	          
 	});
 }
 register = function(req,res){
@@ -54,7 +54,7 @@ app.post('/saveUser',register);
 
 // Views render
 app.get('/',login)
-app.get('/timeline',middleware.ensureAuthenticated,timeline)
+app.get('/timeline',timeline)
 app.post('/auth/login',authLogin);
 
 }

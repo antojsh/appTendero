@@ -21,6 +21,8 @@ body#timeline
 				span hola
 
 	article#catalogo  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad vero sunt iste omnis, dolore magnam voluptas quas atque nulla, laudantium quod laboriosam aspernatur. Repudiandae illo dolorem obcaecati, pariatur error culpa.
-
-
+	script(src='/socket.io/socket.js')  
+	script
+		var socket = io("http://192.168.130.87:3000", { query: "foo=bar" });
+	
 	

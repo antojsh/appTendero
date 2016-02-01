@@ -219,16 +219,16 @@ section#container{
 
 section#login{
 	
-	background:linear-gradient(360deg,#024959,rgba(black,.9));
+	background:linear-gradient(#024959,#037E8C);
 	z-index:10;
 	.facebookLogin{
 		@include buttons($boton-facebook-color);
-		width: 100%;
+		width: 45%;
 		text-align: center;
 	}
 	.twitterLogin{
 		@include buttons($boton-twitter-color);
-		width: 100%;
+		width: 45%;
 		text-align: center;
 	}
 	.contentLogin{
@@ -270,16 +270,20 @@ section#login{
 				
 				font-size: 1.2rem;
 			}
-			&:nth-child(7){
+			&:nth-child(2){
+				display: flex;
+				justify-content: space-around;
+			}
+			&:nth-child(6){
 				background:none;
 				border: 1px solid rgba(white,.3);
 			}
-			&:nth-child(5){
+			&:nth-child(4){
 				background:rgba(white,.3);
 				border: 1px solid rgba(white,.3);
 				
 			}
-			&:nth-child(6){
+			&:nth-child(5){
 					background:rgba(white,.3);
 				border: 1px solid rgba(white,.3);
 				

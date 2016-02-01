@@ -12,19 +12,18 @@ html(lang="en")
         form
             h1.logoText Tendero
             div.rowForm
-              a(href='/auth/facebook').facebookLogin Login With Facebook
-            div.rowForm
-              a(href='/auth/facebook').twitterLogin Login With Twitter
-
+              a(href='/auth/facebook').facebookLogin Facebook
+              a(href='/auth/facebook').twitterLogin Twitter
+            
             div.rowForm
               small.orText --- Or ---
             div.rowForm
              
-              input(type='text' placeholder='Usuario o email')
+              input(type='text' placeholder='Usuario o email')#userLogin
             div.rowForm
-              input(type='text' placeholder='Contraseña')
+              input(type='text' placeholder='Contraseña')#passLogin
             div.rowForm
-              input(type='submit' placeholder='Contraseña' value='Log in')
+              input(type='submit' placeholder='Contraseña' value='Log in')#btnLogin
             div.rowForm
               small Ha olvidado su contraseña ?
       .registerContent

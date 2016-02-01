@@ -231,7 +231,7 @@ section#container {
           padding: 0px 5px; }
 
 section#login {
-  background: linear-gradient(360deg, #024959, rgba(0, 0, 0, 0.9));
+  background: linear-gradient(#024959, #037E8C);
   z-index: 10; }
   section#login .facebookLogin {
     background-color: #5E7DC1;
@@ -269,7 +269,7 @@ section#login {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 45%;
     text-align: center; }
   section#login .twitterLogin {
     background-color: #60A9DE;
@@ -307,7 +307,7 @@ section#login {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 45%;
     text-align: center; }
   section#login .contentLogin {
     height: calc(100vh - 55px);
@@ -340,13 +340,16 @@ section#login {
         left: 50%;
         transform: translateX(-50%);
         font-size: 1.2rem; }
-      section#login .contentLogin .rowForm:nth-child(7) {
+      section#login .contentLogin .rowForm:nth-child(2) {
+        display: flex;
+        justify-content: space-around; }
+      section#login .contentLogin .rowForm:nth-child(6) {
         background: none;
         border: 1px solid rgba(255, 255, 255, 0.3); }
-      section#login .contentLogin .rowForm:nth-child(5) {
+      section#login .contentLogin .rowForm:nth-child(4) {
         background: rgba(255, 255, 255, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.3); }
-      section#login .contentLogin .rowForm:nth-child(6) {
+      section#login .contentLogin .rowForm:nth-child(5) {
         background: rgba(255, 255, 255, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.3); }
       section#login .contentLogin .rowForm input {

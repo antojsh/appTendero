@@ -10,7 +10,7 @@ $(document).ready(function(){
       'icon-user-md':'medico.jpg',
       'icon-camera-1':'fotografo.jpg'
 	}
-	 cargarImagenesCategoria(imagenesCategoria)
+	cargarImagenesCategoria(imagenesCategoria)
 	var btnRegister 		= document.querySelector('#btnRegister');
 	btnRegister.addEventListener('click',function(e){
 		e.preventDefault();
@@ -60,6 +60,30 @@ function cargarImagenesCategoria(img){
 		$('.'+key).css('background','url(/static/img/'+val+')');
 	})
 }
+
+document.querySelector('#btnLogin').addEventListener('click',function(e){
+	e.preventDefault()
+	var userLogin = document.querySelector('#userLogin').value;
+	var passLogin = document.querySelector('#passLogin').value;
+	$.ajax({
+		  url: "http://192.168.130.87:3000/auth/login",
+		  type:'POST',
+		  data:{'user':userLogin, 'password':passLogin},
+		  success: function(data){
+		    if(data.status==200){
+		    	if(data.data.token){
+		    		localStorage.setItem("token", data.data.token);
+		    		window.location='/timeline'
+		    	}
+
+		    }
+		  },
+		  error:function(err){
+		  	alert(JSON.stringify(err))
+		  }
+		    	
+	});
+},false)
 
 
 
