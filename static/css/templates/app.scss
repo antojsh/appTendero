@@ -30,15 +30,18 @@
 section{
 	position: fixed;
 	left:0;
-	top:0;
+	top:100%;
 	width: 100%;
 	height:100vh;
 	z-index:0;
 	background:$Singups-background;
 	overflow: auto;
-	
+	perspective: 800px;
 	right:-100%;
-	transition: all .3seg;
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 section#container{
 	padding-top:50px;
@@ -151,16 +154,11 @@ section#container{
 
 	
 }
-.category{
-		position:fixed;
+#category{
 		
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
 		background:#FFFFFA;
 		box-shadow:1px 1px 5px #5F5448;
-		display: none;
+		
 		.headerCategory{
 			height: 50px;
 			width: 100%;
@@ -218,6 +216,7 @@ section#login{
 	justify-content:center;
 	align-items:center;
 	background:linear-gradient(#024959,#037E8C);
+	z-index:10;
 	.contentLogin{
 		height:auto;
 		width:90%;

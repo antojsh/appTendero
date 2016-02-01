@@ -46,14 +46,18 @@ section:target {
 section {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 100%;
   width: 100%;
   height: 100vh;
   z-index: 0;
   background: #f6f6f6;
   overflow: auto;
+  perspective: 800px;
   right: -100%;
-  transition: all .3seg; }
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
 
 section#container {
   padding-top: 50px; }
@@ -179,16 +183,10 @@ section#container {
       background-size: cover;
       background-image: url(http://www.unipymes.com/wp-content/uploads/2014/09/8.-drogueria.jpg); }
 
-.category {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+#category {
   background: #FFFFFA;
-  box-shadow: 1px 1px 5px #5F5448;
-  display: none; }
-  .category .headerCategory {
+  box-shadow: 1px 1px 5px #5F5448; }
+  #category .headerCategory {
     height: 50px;
     width: 100%;
     background: #F24C27;
@@ -196,20 +194,20 @@ section#container {
     justify-content: space-between;
     align-items: center;
     padding: 0px 1em; }
-    .category .headerCategory label {
+    #category .headerCategory label {
       letter-spacing: 2px; }
-    .category .headerCategory label, .category .headerCategory span {
+    #category .headerCategory label, #category .headerCategory span {
       color: white; }
-  .category .contentCategory {
+  #category .contentCategory {
     height: calc(100% - 50px);
     width: 100%;
     overflow: auto; }
-    .category .contentCategory ul {
+    #category .contentCategory ul {
       list-style: none;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap; }
-      .category .contentCategory ul li {
+      #category .contentCategory ul li {
         width: 100%;
         height: 10em;
         display: flex;
@@ -224,7 +222,7 @@ section#container {
         background-position: center;
         font-size: .9em;
         background-attachment: fixed; }
-        .category .contentCategory ul li label {
+        #category .contentCategory ul li label {
           background: #037E8C;
           border-radius: 2px;
           padding: 0px 5px; }
@@ -233,7 +231,8 @@ section#login {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#024959, #037E8C); }
+  background: linear-gradient(#024959, #037E8C);
+  z-index: 10; }
   section#login .contentLogin {
     height: auto;
     width: 90%;
