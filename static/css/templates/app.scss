@@ -45,6 +45,9 @@ section{
 }
 section#container{
 	padding-top:50px;
+	header{
+		position:fixed;
+	}
 	article.formSingups{
 		width: 90%;
 		margin: 0 auto;
@@ -114,24 +117,27 @@ section#container{
 				letter-spacing: 3px;
 				text-align: center;
 			}
+			
 		}
 	}
 	.selectPhoto{
-		width: 4em;
-		height: 4em;
-		border:1px solid darken($Singups-colorIcon,10%);
+		width: 6em;
+		height: 6em;
+		border:1px dashed darken(#dadada,10%);
 		position:relative;
 		left: 50%;
 		top: 1em;
 		transform: translateX(-50%);
-		margin-bottom: 1em;
+		margin-bottom: 2em;
+		margin-top: -1em;
 		border-radius:50%;
 		display: flex;
 		justify-content: center;
 		align-items:center;
+
 		span{
 			font-size: 2.5em;
-			color: $Singups-colorIcon;
+			color:darken(#dadada,10%);
 		}
 
 	}
@@ -212,24 +218,33 @@ section#container{
 
 
 section#login{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	background:linear-gradient(#024959,#037E8C);
+	
+	background:linear-gradient(360deg,#024959,rgba(black,.9));
 	z-index:10;
+	.facebookLogin{
+		@include buttons($boton-facebook-color);
+		width: 100%;
+		text-align: center;
+	}
+	.twitterLogin{
+		@include buttons($boton-twitter-color);
+		width: 100%;
+		text-align: center;
+	}
 	.contentLogin{
-		height:auto;
-		width:90%;
+		height:calc(100vh - 55px);
+		width:100%;
 		padding:10px;
-		display:flex;
-		justify-content:center;
-		align-items:center;
-		flex-direction: column;
+		overflow:auto;
+		display: flex;
+		justify-content: center;
+		
 		form{
-			justify-content:center;
-			align-items:center;
-			flex-direction: column;
+			
 			width: 100%;
+			margin-top: 10vh;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		h1.logoText{
 			font-family: $font-family-logo;
@@ -240,22 +255,36 @@ section#login{
 			text-align: center;
 
 		}
+
 		.rowForm{
 			width: 100%;
 			height: 40px;
-			background:rgba(white,.3);
+			position:relative;
 			margin-bottom: 10px;
-			&:nth-child(4){
+			.orText{
+				font-family: $font-family-logo;
+				color:white;
+				position:absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				
+				font-size: 1.2rem;
+			}
+			&:nth-child(7){
 				background:none;
 				border: 1px solid rgba(white,.3);
 			}
 			&:nth-child(5){
-				background:none;
-				text-align: center;
-				color: #FFFFFA;
-				letter-spacing: .1px;
-				font-size: .9rem;
+				background:rgba(white,.3);
+				border: 1px solid rgba(white,.3);
+				
 			}
+			&:nth-child(6){
+					background:rgba(white,.3);
+				border: 1px solid rgba(white,.3);
+				
+			}
+			
 			input{
 				width: 100%;
 				height: 100%;

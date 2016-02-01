@@ -12,6 +12,13 @@ html(lang="en")
         form
             h1.logoText Tendero
             div.rowForm
+              a(href='/auth/facebook').facebookLogin Login With Facebook
+            div.rowForm
+              a(href='/auth/facebook').twitterLogin Login With Twitter
+
+            div.rowForm
+              small.orText --- Or ---
+            div.rowForm
              
               input(type='text' placeholder='Usuario o email')
             div.rowForm
@@ -31,15 +38,18 @@ html(lang="en")
         .titleHeader
           strong REGISTER
         .nextWindow
-          a(href="#category")
-            small Next
+          
       article.formSingups
+       
+        div.selectPhoto
+          span.icon-camera
+          
         div.rowForm
           span.icon-user-account
-          input(type='text' placeholder='Nombre Negocio')#nameNegocio
+          input(type='text' placeholder='Nombre Completo')#fullName
         div.rowForm
           span.icon-home
-          input(type='text' placeholder='Nombre usuario')#userName
+          input(type='text' placeholder='Nombre de usuario')#userName
         div.rowForm
           span.icon-envelope
           input(type='email' placeholder='Correo')#email
@@ -50,25 +60,7 @@ html(lang="en")
           span.icon-lock
           input(type='password' placeholder='Validar contraseña')#validePassword
         div.rowForm
-          span.icon-list-alt
-          textarea(type='text' placeholder='Descripcion del negocio')
-        //- div.rowForm#contentGoCategory 
-        //-   a(href="#category")
-        //-     span.icon-tags 
-        //-       label Categorias
-          
-        //-   .goCategory
-        //- div.rowForm
-        //-   div.selectPhoto
-        //-     span.icon-camera
-          //- small Add photos (Optional)
-        //- div.rowForm
-        //-  .photosSelected
-        //-       .photo
-        //-       .photo
-        //-       .photo
-        //- div.rowForm
-        //-   a(href='#home').button.success#btnRegister REGISTER
+          a(href='#').button.success#btnRegister REGISTER
 
     
     section#category
