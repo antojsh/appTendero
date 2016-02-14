@@ -13,3 +13,284 @@ section:target{
    box-shadow:1px 1px 5px rgba(red,.9);
    border:1px solid rgba(black,.9);
 }
+.notificationtop{
+	width:100%;
+	padding:5px;
+	background:linear-gradient(#F24C27,darken(#F24C27,20%));
+	height:auto;
+	display:none;
+
+	position: fixed;
+	z-index:99999999;
+	left:0;
+	
+	.contentNotification{
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		ul{
+			list-style: circle !important;
+			li{
+				color: white;
+			}
+		} 
+	}
+}
+$font-family-heading: 'Francois One', sans-serif;
+$font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+$font-size-base: 16px;
+
+$gutter: 10px;
+$border-radius: 2px;
+
+$color-primary: #31d47d;
+$background: #f4fcff;
+$input-bg: #fff;
+$text-color: darken($background, 86%);
+$border-color: desaturate(darken($background, 16%), 56%);
+
+$important-color: #f42866;
+
+
+.wrapper {
+  min-height: 100%;
+}
+
+html {
+  font-size: $font-size-base;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: $font-family;
+  font-weight: $font-weight-light;
+  color: $text-color;
+  background-color: $background;
+}
+
+small {
+  font-size: .8rem;
+}
+
+h1 {
+  display: inline-block;
+  font-family: $font-family-logo;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: $font-weight-bold;
+  margin: 0 0 .8rem 0;
+  border-bottom: 4px solid $color-primary;
+}
+
+p {
+  margin: 0 0 2rem 0;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  
+  &:focus,
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
+}
+
+.text-muted {
+  color: desaturate(lighten($text-color, 60%), 80%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-form {
+  padding: 0 ($gutter * 2);
+}
+
+.form {
+  display: block;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: $gutter * 2;
+}
+
+.form-label,
+.form-input {
+  display: block;
+  width: 100%;
+}
+
+.form-label {
+  cursor: pointer;
+  margin-bottom: $gutter / 2;
+}
+
+.form-label--required {
+  position: relative;
+
+  &:before {
+    content: "*";
+    position: absolute;
+    left: -$gutter;
+    color: $important-color;
+  }
+}
+
+.form-input {
+  padding: 10px;
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+    background-color: desaturate(darken($background, 2%), 55%);
+  }
+}
+
+.form-footer {
+  text-align: right;
+}
+
+.form-error {
+  color: $important-color;
+  margin-top: $gutter / 2;
+}
+
+.button {
+  color: white;
+  white-space: nowrap;
+  background-color: $color-primary;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: $border-radius;
+  transition: all 150ms ease-out;
+
+  &:focus,
+  &:hover {
+    background-color: darken($color-primary, 14%);
+  }
+}
+
+.form-addon {
+  position: relative;
+  display: table;
+  width: 100%;
+  border: 1px solid $border-color;
+  background-color: $input-bg;
+  border-radius: $border-radius;
+
+  .form-input,
+  .form-addon__addon {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+
+  .form-addon__addon {
+    position: relative;
+    width: 40px;
+    text-align: center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: 0;
+      height: calc(100% - 8px);
+      border-right: 1px solid $border-color;
+    }
+  }
+}
+
+.form-addon__icon {
+  position: absolute;
+  color: $color-primary;
+  font-size: .8rem;
+  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  right: $gutter;
+}
+
+.toaster {
+  position: fixed;
+  z-index: 1;
+  top: $gutter;
+  right: $gutter;
+}
+
+.toast {
+  color: #fff;
+  padding: ($gutter * 2);
+  margin-bottom: $gutter;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(#000, .2);
+  opacity: 0;
+  transform: translateY(-$gutter) rotateY(40deg);
+  transition: all 300ms ease;
+  
+  &.toast--show {
+    transform: translateY(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+.toast--success {
+  background-color: $color-primary;
+}
+
+.toast--error {
+  background-color: $important-color;
+}
+
+footer {
+  @extend .text-muted;
+  margin-top: $gutter;
+}
+
+
+
+/*---------------------------------------------*\
+    GentleForm related styles
+\*---------------------------------------------*/
+
+.form-addon {
+  .form-addon__icon {
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform 150ms ease,
+                opacity 150ms ease;
+  }
+  
+  &.is-valid [class*="icon-valid"],
+  &.is-invalid [class*="icon-invalid"] {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  
+  &.is-invalid {
+    background-color: lighten($important-color, 42%);
+    border-color: lighten($important-color, 20%);
+
+    .form-addon__icon {
+      color: $important-color;
+    }
+
+    .form-addon__addon:before {
+      border-color: lighten($important-color, 20%);
+    }
+  }
+}

@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	window.location='#login'
 	var imagenesCategoria={
 	  'icon-pizza ':'pizzaNueva.jpg',
       'icon-eat-food-hotdog-streamline':'comidaRapida.jpg',
@@ -14,24 +15,39 @@ $(document).ready(function(){
 	var btnRegister 		= document.querySelector('#btnRegister');
 	btnRegister.addEventListener('click',function(e){
 		e.preventDefault();
+		$('.notificationtop .contentNotification').children().html('')
 		var name 				= document.querySelector('#fullName').value;
 		var user 				= document.querySelector('#userName').value;
 		var email 				= document.querySelector('#email').value;
 		var password 			= document.querySelector('#password').value;
 		var repeatPassword 		= document.querySelector('#validePassword').value;
-		if(valFormLogin(name,user,email,password,repeatPassword)){
+		
 			$.ajax({
-			  url: "http://192.168.130.87:3000/saveUser",
+			  url: "http://192.168.1.72:3000/saveUser",
 			  type:'POST',
-			  data:{'name':name,'user':user,'email':email,'password':password},
+			  data:{'name':name,'user':user,'email':email,'password':password,'password_confirmation':repeatPassword},
+			  
 			  success: function(res){
-			    alert(JSON.stringify(res))
+			  	console.log(JSON.stringify(res))
+			    if(res.data.error){
+			    	var erros= res.message.replace("ValidationError:","")
+			    	erros=erros.split(',')
+			    	for (var i = erros.length - 1; i >= 0; i--) {
+			    		$('.notificationtop .contentNotification').children().append('<li>- '+erros[i]+'</li>');
+			    		
+			    	};
+			    	$('.notificationtop').fadeIn()
+					
+			    }else{
+			    	$('.notificationtop').fadeOut()
+			    	alert('Guardado')
+			    }
 			  },
 			  error:function(err){
 			  	alert(JSON.stringify(err))
 			  }
 			});
-		}
+		
 		
 	},false)
 })
@@ -44,7 +60,8 @@ function valFormLogin(name,user,email,password,repeatPassword){
 	}
 	else{
 		if(password!=repeatPassword){
-			$('#validePassword').addClass('errorColorInput')
+			$('.notificationtop').fadeIn()
+			$('.notificationtop .contentNotification').children().html('Las contraseñas no coninciden')
 			status=false;
 		}else{
 			$('#validePassword').removeClass('errorColorInput')

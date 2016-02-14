@@ -6,20 +6,25 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
     link(rel="stylesheet", href="/static/css/bundle.css")
     link(rel="stylesheet", href="https://file.myfontastic.com/BUNUK4iyyhi4VSPcCozeCS/icons.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.0.0/hint.base.min.css")
   body#registerandlogin
+    .notificationtop
+      .contentNotification
+        ul
+
     section#login
       .contentLogin
         form
             h1.logoText Tendero
             div.rowForm
               a(href='/auth/facebook').facebookLogin Facebook
-              a(href='/auth/facebook').twitterLogin Twitter
+              a(href='/auth/twitter').twitterLogin Twitter
             
             div.rowForm
               small.orText --- Or ---
             div.rowForm
              
-              input(type='text' placeholder='Usuario o email')#userLogin
+              input(type='text' placeholder='Usuario o email' )#userLogin
             div.rowForm
               input(type='text' placeholder='Contraseña')#passLogin
             div.rowForm
@@ -32,7 +37,7 @@ html(lang="en")
     section#container
       header
         .backButtom
-          a(href="#login")
+          a(href="#login" data-hint="Thank you!").hint--warning
             span.icon-chevron-left
         .titleHeader
           strong REGISTER
@@ -84,6 +89,62 @@ html(lang="en")
                 label Medico
               li.icon-camera-1 
                 label Fotografo
+    section#loginprueba
+      .toaster
+      main.wrapper
+        div.section-form
+          h1 Registro
+            
+          form.form(name='signup', novalidate='')
+            .form-group
+              label.form-label.form-label--required(for='name')
+                | Name:
+              .form-addon(data-states-for='name')
+                .form-addon__addon
+                  span.icon-name
+                input#name.form-input(type='text', name='name', placeholder='Andrew', required='')
+                span.form-addon__icon.icon-valid
+                span.form-addon__icon.icon-invalid
+              div(data-errors-for='name')
+               
+            .form-group
+              label.form-label.form-label--required(for='email')
+                | Email:
+              .form-addon(data-states-for='email')
+                .form-addon__addon
+                  span.icon-email
+                input#email.form-input(type='email', name='email', placeholder='andrew@email.com', required='')
+                span.form-addon__icon.icon-email
+                span.form-addon__icon.icon-invalid
+              div(data-errors-for='email')
+               
+            .form-group
+              label.form-label(for='phone')
+                | Phone number:
+              .form-addon(data-states-for='phone')
+                .form-addon__addon
+                  span.icon-phone
+                input#phone.form-input(type='text', name='phone', placeholder='123 456 789', pattern='[0-9]{3} [0-9]{3} [0-9]{3}')
+                span.form-addon__icon.icon-valid
+                span.form-addon__icon.icon-invalid
+              div(data-errors-for='phone')
+                
+            .form-group
+              label.form-label.form-label--required(for='password')
+                | Password 
+                span.text-muted (minimum 6 characters)
+                | :
+              .form-addon(data-states-for='password')
+                .form-addon__addon
+                  span.icon-password
+                input#password.form-input(type='password', name='password', placeholder='********', minlength='6', required='')
+                span.form-addon__icon.icon-valid
+                span.form-addon__icon.icon-invalid
+              div(data-errors-for='password')
+               
+            .form-footer
+              button.button(type='submit') Sign up
+
 
     
 

@@ -18,6 +18,7 @@ app.use('/static', express.static('static'));
 app.set('view engine','jade');
 app.listen(3000)
 app.use(passport.initialize());
+app.use(passport.session());
 require('./routes')(app)
 
 

@@ -27,18 +27,17 @@ register = function(req,res){
 		user:req.body.user,
 		email: req.body.email,
 		password:req.body.password,
-		photo		: ''
+		password_confirmation:req.body.password_confirmation,		
+		
 		
 	})
 	user.save(function(err){
-		var reponse= status;
 		if(err){
+			res.send(res.response(500,{error:true},err))
+		}else{
 
-			reponse.code=false;
-			reponse.message=
-			res.send(res.response(200,null,constants.messages.USER_NO_SAVE))
-		}
 			res.send(res.response(200, user,constants.messages.USER_SAVE))
+		}
 	})
 }
 getusers=function(req,res){
@@ -49,7 +48,8 @@ getusers=function(req,res){
 	})
 }
 // Operacion DB
-app.get('/getusers',middleware.ensureAuthenticated,getusers);
+//app.get('/getusers',middleware.ensureAuthenticated,getusers);
+app.get('/getusers',getusers);
 app.post('/saveUser',register);
 
 // Views render
