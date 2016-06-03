@@ -1,4 +1,3 @@
-// services.js
 var jwt = require('jwt-simple');  
 var moment = require('moment');  
 var token = require('./token');

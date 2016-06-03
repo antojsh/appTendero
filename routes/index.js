@@ -33,7 +33,6 @@ Rutas Publicas
 Incio de sesion y Registro
 */
 router.post('/login',function(req,res){
-	console.log(JSON.stringify(req.body))
 	User.findOne({user: req.body.user,password:req.body.password}, function(err, user) {
 	    if(err)
 	    	return res.send(res.response(403,null,constants.messages.ERROR_LOGIN));
@@ -117,7 +116,36 @@ router.route('/user/negocio/:id')
       		res.send(res.response(200, null,'Eliminado Correctamente'));
         })
     });
+});
+
+
+// CRDU USUARIO
+router.route('/user/:id')
+.get(function(req,res){
+	User.find({'_id':req.params.id},function(err,usuario){
+		if(err)
+			res.send(res.response(500,{error:true},err))
+		else
+			res.send(res.response(200, usuario))
+	})
 })
+.put(function(req,res){
+	User.findById(req.params.id, function(err, usuario) {
+  		usuario.name =req.body.name
+  		usuario.user=req.body.user
+  		usuario.email=req.body.email
+  		usuario.password=req.body.password
+  		usuario.password_confirmation=req.body.password_confirmation
+        usuario.save(function(err) {
+            if(err) 
+            	{return res.send(res.response(500, 'ERROR'))}
+      		
+      		res.send(res.response(200, usuario))
+        });
+    });
+})
+
+
 
 
 

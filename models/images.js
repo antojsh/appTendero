@@ -7,8 +7,7 @@ var images_schema = new Schema({
 		required:"El Nombre es obligatorio"
 	},
 	user:{
-		type:{ type: Schema.ObjectId, ref: "User" }, 
-		required:"Usuario Obligatorio"
+		type:{ type: Schema.ObjectId, ref: "User" }
 	},
 	date_upload: { type: Date, default: Date.now }
 	
