@@ -2,7 +2,8 @@ var jwt = require('jwt-simple');
 var moment = require('moment');  
 var config = require('./token');
 
-exports.ensureAuthenticated = function(req, res, next) {  
+exports.ensureAuthenticated = function(req, res, next) {
+  console.log(req.headers.authorization)
   if(!req.headers.authorization) {
     return res
       .status(403)

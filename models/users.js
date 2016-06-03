@@ -29,6 +29,9 @@ var users_schema = new Schema({
 				message:"Las contraseñas no son iguales"
 			}
 	},
+	token:{
+		type:String
+	},
 	provider_id	: String,
 	provider	: String,
 	photo		: String,
