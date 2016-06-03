@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema 	 = mongoose.Schema;
-var uniqueValidator = require('mongoose-unique-validator');
-var users_schema = new Schema({
+const mongoose = require('mongoose');
+const Schema 	 = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
+const users_schema = new Schema({
 	name: {
 		type:String,
 		required:"El Nombre es obligatorio"

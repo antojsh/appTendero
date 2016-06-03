@@ -1,13 +1,13 @@
-var express 	= require('express')
-var app 		= express();
-var server 		= require('http').Server(app);
-var bodyParser  = require('body-parser');
-var cors        = require('cors');  
-var conexion    = require('./conexion')()
+const express 	= require('express')
+const app 		= express();
+const server 		= require('http').Server(app);
+const bodyParser  = require('body-parser');
+const cors        = require('cors');  
+const conexion    = require('./conexion')()
 //var socket      = require('./socket')(server);
-var passport 	= require('passport');
-var routes		= require('./routes');
-var multipart   = require('connect-multiparty')
+const passport 	= require('passport');
+const routes		= require('./routes');
+const multipart   = require('connect-multiparty')
 require('./socialauth/passport')(passport,app);
 app.use(bodyParser.urlencoded({
   extended: true
