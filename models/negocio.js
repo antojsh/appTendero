@@ -3,7 +3,8 @@ const Schema 	 = mongoose.Schema;
 const user = mongoose.model('User');
 const negocio_schema = new Schema({
 	user: {
-		type:{ type: Schema.ObjectId, ref: "User" }
+		type:String,
+		required:"El usuario es obligatorio"
 	},
 	name: {
 		type:String,
@@ -11,8 +12,12 @@ const negocio_schema = new Schema({
 	},
 	description:{
 		type:String,
-
 	},
+	loc: {
+	    type: [Number],  // [<longitude>, <latitude>]
+	    index: '2d',      // create the geospatial index
+	    required:"La posicion del negocio es obligatoria"
+    },
 	photo		: String,
 	date_register: { type: Date, default: Date.now }
 });

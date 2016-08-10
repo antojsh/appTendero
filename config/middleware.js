@@ -11,7 +11,13 @@ exports.ensureAuthenticated = function(req, res, next) {
   }
 
   var token = req.headers.authorization;
-  var payload = jwt.decode(token, config.TOKEN_SECRET);
+  try{
+    var payload = jwt.decode(token, config.TOKEN_SECRET);
+  }catch(e){
+     return res
+         .status(403)
+         .send({message: "No estas autorizado acceder a esta url"});
+  }
 
   if(payload.exp <= moment().unix()) {
   	console.log('Token Expirado')
